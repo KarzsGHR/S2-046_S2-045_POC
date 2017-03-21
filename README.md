@@ -5,7 +5,7 @@
 ##  Sample:
   
   1. chmod +x ./s2_046.sh       
-  2. ./s2_046.sh http://172.16.152.135/index.action`
+  2. ./s2_046.sh http://172.16.152.135/index.action
     
 ##  OUTPUT:
     ================HTTP GET Method================
