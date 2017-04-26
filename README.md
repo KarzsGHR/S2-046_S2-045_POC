@@ -1,6 +1,7 @@
 # S2-046_POC
 ##  Usage:
     ./s2_046.sh [url]
+    ./s2_045.sh [url]
     
 ##  Sample:
   
